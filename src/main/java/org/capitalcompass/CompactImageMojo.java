@@ -21,16 +21,14 @@ import java.io.IOException;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugins.annotations.Execute;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-@Mojo(name = "compact-image")
-@Execute(phase = LifecyclePhase.PACKAGE)
+@Mojo(name = "compact-image", defaultPhase = LifecyclePhase.PACKAGE)
 public class CompactImageMojo extends AbstractMojo {
 
-	@Parameter(property = "project-name", required = true)
+	@Parameter(property = "project.name", required = true)
 	private String projectName;
 
 	@Parameter(property = "version", required = true)
